@@ -1,0 +1,32 @@
+#Ex 01 (Test Assignment)
+#Print Function
+#Abdullah Mohammad
+#1/4/2023
+
+print("Hello World")
+print("My Name is Abdullah")
+print("The Area is:", 34*59)
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Ex 01 (Test Assignment).py
+Hello World
+My Name is Abdullah
+The Area is: 2006
+
+
+
+
+
+#Ex 02 
+#Turtle Circle
+#Abdullah Mohammad
+#1/4/23
+
+import turtle
+
+turtle.circle(100)
+
+
+
+See Screenshot

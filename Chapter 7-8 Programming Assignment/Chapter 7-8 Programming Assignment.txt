@@ -1,0 +1,208 @@
+#7.3 (Define the Class)
+#The Account class
+#Abdullah Mohammad
+#1/16/23
+
+class Account:
+    def __init__(self, ID=0, balance=100, annualInterestRate=0):
+        self.__id = ID
+        self.__balance = balance
+        self.__annualInterestRate = annualInterestRate
+
+    def getID(self):
+        return self.__id
+    
+    def setID(self, ID):
+        self.__id = ID
+
+    def getBalance(self):
+        return self.__balance
+    
+    def setBalance(self, balance):
+        self.__balance = balance
+
+    def getAnnualInterestRate(self):
+        return self.__annualInterestRate
+    
+    def setAnnualInterestRate(self, annualInterestRate):
+        self.__annualInterestRate = annualInterestRate
+
+
+    def getMonthlyInterestRate(self):
+        self.__monthlyInterestRate = self.__annualInterestRate / 12
+        return self.__monthlyInterestRate
+
+    def getMonthlyInterest(self):
+        self.__monthlyInterest = self.__balance * (self.__monthlyInterestRate / 100)
+        return self.__monthlyInterest
+
+    def withdraw(self, amount):
+        if (self.__balance - amount) >= 0:
+            self.__balance -= amount
+            print("Amount successfully withdrawn")
+        else:
+            print("You do not have enough money to withdraw that amount")
+
+    def deposit(self, amount):
+        self.__balance += amount
+        print("Amount successfully deposited")
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 7-8 Programming Assignment/AccountClass.py
+
+
+
+
+#7.3 (Using the Class)
+#The Account class
+#Abdullah Mohammad
+#1/16/23
+
+from AccountClass import Account
+
+
+def main():
+    testAccount = Account(1122, 20000, 4.5)
+
+    testAccount.withdraw(2500)
+    testAccount.deposit(3000)
+
+    print("The ID is, ", testAccount.getID())
+    print("The balance is, $", format(testAccount.getBalance(), '.2f'))
+    print("The monthly interest rate is, ", format(testAccount.getMonthlyInterestRate(), '.2f'), "%")
+    print("The monthly interest  is, ", format(testAccount.getMonthlyInterest(), '.2f'), "%")
+
+main()
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 7-8 Programming Assignment/7.3.py
+Amount successfully withdrawn
+Amount successfully deposited
+The ID is,  1122
+The balance is, $ 20500.00
+The monthly interest rate is,  0.38 %
+The monthly interest  is,  76.88 %
+
+
+
+
+
+#7.5 (Define the Class)
+#Geometry: n-sided regular polygon 
+#Abdullah Mohammad
+#1/16/23
+
+import math
+
+class RegularPolygon:
+
+    
+    def __init__(self, n = 3, side = 1, x = 0, y = 0):
+        self.__n = n
+        self.__side = side
+        self.__x = x
+        self.__y = y
+
+    def getN(self):
+        return self.__n
+
+    def setN(self, n):
+        self.__n = n
+
+    def getSide(self):
+        return self.__side
+
+    def setSide(self, side):
+        self.__side = side
+
+    def getX(self):
+        return self.__x
+
+    def setX(self, x):
+        self.__x = x
+
+    def getY(self):
+        return self.__y
+
+    def setY(self, y):
+        self.__y = y
+
+
+    def getPerimeter(self):
+        self.__perimeter = self.__n * self.__side
+        return self.__perimeter
+
+    def getArea(self):
+        self.__area = (self.__n * (self.__side)**2) / (4 * math.tan(math.pi / self.__n))
+        return self.__area
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 7-8 Programming Assignment/PolygonClass.py
+
+
+
+#7.5 (Using the Class)
+#Geometry: n-sided regular polygon 
+#Abdullah Mohammad
+#1/16/23
+
+from PolygonClass import RegularPolygon
+
+def main():
+    Polygon1 = RegularPolygon()
+    Polygon2 = RegularPolygon(6, 4)
+    Polygon3 = RegularPolygon(10, 4, 5.6, 7.8)
+
+    print("Polygon 1 has an area of", format(Polygon1.getArea(), '.4f'),
+          "and a perimeter of ", format(Polygon1.getPerimeter(), '.4f'))
+    
+    print("Polygon 2 has an area of", format(Polygon2.getArea(), '.4f'),
+          "and a perimeter of ", format(Polygon2.getPerimeter(), '.4f'))
+    
+    print("Polygon 3 has an area of", format(Polygon3.getArea(), '.4f'),
+          "and a perimeter of ", format(Polygon3.getPerimeter(), '.4f'))
+
+main()
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 7-8 Programming Assignment/7.5.py
+Polygon 1 has an area of 0.4330 and a perimeter of  3.0000
+Polygon 2 has an area of 41.5692 and a perimeter of  24.0000
+Polygon 3 has an area of 123.1073 and a perimeter of  40.0000
+
+
+
+
+#8.4
+#Occurrences of a specified character
+#Abdullah Mohammad
+#1/16/23
+
+
+def count(string, character):
+    numOfCharacter = 0
+    for ch in string:
+        if ch == character:
+            numOfCharacter +=1
+        
+    return numOfCharacter
+
+
+def main():
+    string = input("Enter a string: ")
+    character = input("Enter a character: ")
+
+    print("The character", character, "appears", count(string, character), "time" if count(string, character) == 1 else "times", "in the string", string)
+
+main()
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 7-8 Programming Assignment/8.4.py
+Enter a string: Welcome
+Enter a character: e
+The character e appears 2 times in the string Welcome

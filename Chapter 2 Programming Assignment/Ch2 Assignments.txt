@@ -1,0 +1,74 @@
+#2.5
+#Financial application: calculate tips
+#Abdullah Mohammad
+#1/4/23
+
+
+subtotal, gratrate = eval(input("Enter the subtotal and the gratuity rate: "))
+
+grat = gratrate/100 * subtotal
+total = subtotal + grat
+
+print("The Gratuity is ", grat, "and the total is ", total)
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 2 Programming Assignment/2.5.py =
+Enter the subtotal and the gratuity rate: 100, 15
+The Gratuity is  15.0 and the total is  115.0
+
+
+
+
+#2.13
+#Split digits
+#Abdullah Mohammad
+#1/4/23
+
+
+Num = int(input("Enter a 4 digit integer: "))
+
+
+ThouPlace = Num//1000
+HundPlace = (Num % 1000)//100
+TensPlace = (Num % 100)//10
+OnesPlace = (Num % 10)
+
+print(ThouPlace)
+print(HundPlace)
+print(TensPlace)
+print(OnesPlace)
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 2 Programming Assignment/2.13.py
+Enter a 4 digit integer: 5678
+5
+6
+7
+8
+
+
+
+
+
+#2.15
+#Geometry: area of a hexagon
+#Abdullah Mohammad
+#1/4/23
+
+s = eval(input("Enter a side length: "))
+
+Area = 3 * 3**0.5 /2 * s**2
+print(Area)
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 2 Programming Assignment/2.15.py
+Enter a side length: 10
+259.8076211353316
+
+
+
+
+

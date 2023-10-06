@@ -1,0 +1,110 @@
+#12.1
+#The Triangle class
+#Abdullah Mohammad
+#1/22/23
+
+from GeometricObject import GeometricObject
+import math
+
+class Triangle(GeometricObject):
+    def __init__(self, side1 = 1.0, side2 = 1.0, side3 = 1.0):
+        super().__init__()
+
+        self.__side1 = side1
+        self.__side2 = side2
+        self.__side3 = side3
+
+    #Getters and Setters
+
+    def getSide1(self):
+        return self.__side1
+
+    def setSide1(side1):
+        self.__side1 = side1
+    
+    def getSide2(self):
+        return self.__side2
+    
+    def setSide1(side2):
+        self.__side2 = side2
+
+    def getSide3(self):
+        return self.__side3
+    
+    def setSide3(side3):
+        self.__side3 = side3
+
+    #Methods
+
+    def getPerimeter(self):
+        return self.__side1 + self.__side2 + self.__side3
+    
+    def getArea(self):
+        #Using Heron's Formula
+
+        self.__semiperimeter = (self.__side1 + self.__side2 + self.__side3) / 2
+
+        self.__area = math.sqrt(self.__semiperimeter * (self.__semiperimeter - self.__side1) * (self.__semiperimeter - self.__side2) * (self.__semiperimeter - self.__side3))
+
+        return self.__area
+
+    def __str__(self):
+        return "Triangle: side1 = " + str(side1) + " side2 = " + str(side2) + " side3 = " + str(side3)
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 12 Programming Assignment/Triangle.py
+
+
+
+#12.1
+#The Triangle class
+#Abdullah Mohammad
+#1/22/23
+
+from GeometricObject import GeometricObject
+from Triangle import Triangle
+
+def main():
+    side1 = eval(input("Enter length for side 1: "))
+    side2 = eval(input("Enter length for side 2: "))
+    side3 = eval(input("Enter length for side 3: "))
+
+    color = input("Enter a color: ")
+
+    while True: #Keep looping until a valid answer is given
+        shouldFill = eval(input("Should the shape be filled (1 for yes, 0 for no): "))
+        if shouldFill == 1:
+            shouldFill = True
+            break #End loop once valid answer given
+        elif shouldFill == 0:
+            shouldFill = False
+            break #End loop once valid answer given
+
+
+    testTriangle = Triangle(side1, side2, side3)
+    testTriangle.setColor(color)
+    testTriangle.setFilled(shouldFill)
+
+    print()
+
+    print("The triangle's area is", str(testTriangle.getArea()))
+    print("The triangle's perimeter is", str(testTriangle.getPerimeter()))
+    print("The triangle's color is", str(testTriangle.getColor()))
+    print("The triangle's fill status is", str(testTriangle.isFilled()))
+
+main()
+
+
+
+= RESTART: /Users/abdullahmohammad/Documents/Coding/Python/CIS-007 Python Programming/Chapter 12 Programming Assignment/12.1.py
+Enter length for side 1: 3
+Enter length for side 2: 4
+Enter length for side 3: 5
+Enter a color: Yellow
+Should the shape be filled (1 for yes, 0 for no): 0
+
+The triangle's area is 6.0
+The triangle's perimeter is 12
+The triangle's color is Yellow
+The triangle's fill status is False
